@@ -1,5 +1,5 @@
 def get_summ_of_digit(number):
-    summ_of_digit = 0
+    summ_of_digit = 0 # Сумма цифр
 
     while number:
         summ_of_digit += number % 10
