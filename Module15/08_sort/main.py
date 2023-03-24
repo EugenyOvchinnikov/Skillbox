@@ -7,7 +7,6 @@ origin_list = [1, 4, -3, 0, 10]
 print('Изначальный список: ', origin_list)
 # Сортировка пузырьком
 n = int(len(origin_list))
-swapped = False
 
 for i in range(0, n - 1):
     swapped = False
@@ -15,7 +14,7 @@ for i in range(0, n - 1):
         if origin_list[j] > origin_list[j + 1]:
             swap(origin_list, j, j + 1)
             swapped = True
-            if not swapped:
-                break
+    if not swapped:
+        break
 
 print('Отсортированный список:', origin_list)
