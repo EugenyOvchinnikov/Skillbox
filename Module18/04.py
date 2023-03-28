@@ -1,9 +1,9 @@
-text_line = 'Кажется, я забыл выключить утюг.'
-text_list = text_line.split()
+text_line = str(input('Введите текст: ').title())
 
-for i, word in enumerate(text_list):
-    text_list[i] = word[0:1].upper() + word[1:]
+# text_list = text_line.split()
+#
+# for index, word in enumerate(text_list):
+#     text_list[index] = word[0:1].upper() + word[1:]
+# text_line = ' '.join(text_list)
 
-new_text_line = ' '.join(text_list)
-
-print('Результат:', new_text_line)
+print('Результат:', text_line)
