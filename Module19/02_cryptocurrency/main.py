@@ -44,5 +44,10 @@ data = {
     ]
 }
 
+for key in data:
+    print(key, ' -', data[key])
 
-# TODO здесь писать код
+data['ETH']['total_diff'] = 100
+
+for key in data:
+    print(key, ' -', data[key])
