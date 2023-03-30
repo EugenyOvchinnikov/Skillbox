@@ -1,3 +1,25 @@
+def get_total_quantity_and_cost(my_store):  # сумма количества номенклатуры по всем складам и общая стоимость
+    total_quantity = 0
+    total_cost = 0
+
+    for i_dict in my_store:
+        total_quantity += i_dict['quantity']
+        total_cost += i_dict['quantity'] * i_dict['price']
+
+    return total_quantity, total_cost
+
+
+def get_ruble(number):  # склонение рубля от стоимости
+    if 5 <= number <= 20:
+        return 'рублей'
+    elif number % 10 == 1:
+        return 'рубль'
+    elif number % 10 in (2, 3, 4):
+        return 'рубля'
+    else:
+        return 'рублей'
+
+
 goods = {
     'Лампа': '12345',
     'Стол': '23456',
@@ -24,4 +46,11 @@ store = {
     ],
 }
 
-# TODO здесь писать код
+for item in goods:
+    res = get_total_quantity_and_cost(store[goods[item]])
+    print('{} - {} штук, стоимость {} {}'.format(
+        item,
+        res[0],
+        res[1],
+        get_ruble(res[1])
+    ))
