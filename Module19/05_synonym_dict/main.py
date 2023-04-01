@@ -21,5 +21,3 @@ while True:
     else:
         print('Синоним :', list(synonym_dict.keys())[list(synonym_dict.values()).index(word)])
         break
-
-# myKey = [key for key, value in dict_items if value == myValue]

@@ -1,10 +1,10 @@
-def get_total_quantity_and_cost(my_store):  # сумма количества номенклатуры по всем складам и общая стоимость
+def get_total_quantity_and_cost(item_stores):  # сумма количества номенклатуры по всем складам и общая стоимость
     total_quantity = 0
     total_cost = 0
 
-    for i_dict in my_store:
-        total_quantity += i_dict['quantity']
-        total_cost += i_dict['quantity'] * i_dict['price']
+    for i_store in item_stores:
+        total_quantity += i_store['quantity']
+        total_cost += i_store['quantity'] * i_store['price']
 
     return total_quantity, total_cost
 
@@ -48,9 +48,12 @@ store = {
 
 for item in goods:
     res = get_total_quantity_and_cost(store[goods[item]])
+    total_item_quantity = res[0]
+    total_item_cost = res[1]
+
     print('{} - {} штук, стоимость {} {}'.format(
         item,
-        res[0],
-        res[1],
-        get_ruble(res[1])
+        total_item_quantity,
+        total_item_cost,
+        get_ruble(total_item_cost)
     ))

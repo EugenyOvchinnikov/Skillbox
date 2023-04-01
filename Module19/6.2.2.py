@@ -1,0 +1,26 @@
+incomes = {
+    'apple': 5600.20,
+    'orange': 3500.45,
+    'banana': 5000.00,
+    'bergamot': 3700.56,
+    'durian': 5987.23,
+    'grapefruit': 300.40,
+    'peach': 10000.50,
+    'pear': 1020.00,
+    'persimmon': 310.00,
+}
+
+print('Общий доход за год составил {} рублей'.format(
+    sum(incomes.values())
+))
+
+min_income = min(incomes.values())
+min_income_id = list(incomes.keys())[list(incomes.values()).index(min_income)]
+incomes.pop(min_income_id)
+
+print('Самый маленький доход у {}. Он составляет {} рублей'.format(
+    min_income_id,
+    min_income
+))
+
+print('Итоговый словарь:', incomes)
