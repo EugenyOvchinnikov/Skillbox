@@ -38,4 +38,3 @@ print('\nОригинальный словарь частот:')
 print_dict(freq_dict)
 print('\nИнвертированный словарь частот:')
 print_dict(inverted_freq_dict)
-
