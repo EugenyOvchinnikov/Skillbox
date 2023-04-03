@@ -36,8 +36,7 @@ print('Список пар "ID-студента - возраст": {}'.format(
     pairs_list
 ))
 
-interests_list = get_interests_and_surnames_length(students)[0]
-surnames_length = get_interests_and_surnames_length(students)[1]
+interests_list, surnames_length = get_interests_and_surnames_length(students)
 
 print('Полный список интересов всех студентов: {}'.format(
     interests_list
