@@ -30,4 +30,3 @@ while True:
         attack(user_1, user_2)
     else:
         attack(user_2, user_1)
-# TODO здесь писать код
