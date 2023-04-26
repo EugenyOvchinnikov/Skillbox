@@ -3,30 +3,29 @@ import sys
 
 
 class Warrior:
-    health = 100
-    name: str
+    def __init__(self, name: str):
+        self.name = name
+        self.health = 100
 
-    def print_info(self):
-        print('{}, health {}'.format(self.name, self.health))
+    def __str__(self):
+        return '{} health {}'.format(self.name, self.health)
 
 
 def attack(attacking: Warrior, victim: Warrior):
     """Функционал атаки"""
-    print(f'{attacking.name}, attacks')
+    print('{} attacks'.format(attacking))
     victim.health -= 20
-    victim.print_info()
+    print(victim)
     if victim.health <= 0:
-        print(f'{attacking.name}, wins!')
+        print('{} wins!'.format(attacking))
         sys.exit()
 
 
-user_1 = Warrior()
-user_1.name = 'Warrior_1'
-user_2 = Warrior()
-user_2.name = 'Warrior_2'
+warrior_1 = Warrior('Warrior_1')
+warrior_2 = Warrior('Warrior_2')
 
 while True:
     if random.choice((1, 2)) == 1:
-        attack(user_1, user_2)
+        attack(warrior_1, warrior_2)
     else:
-        attack(user_2, user_1)
+        attack(warrior_2, warrior_1)
