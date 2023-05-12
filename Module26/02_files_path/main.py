@@ -7,18 +7,18 @@ class FindFolder(Exception):
 
 def gen_files_path(link: str, search: str):
     for links, dirs, files in list(os.walk(link)):
+        for _dir in dirs:
+            if _dir == search:
+                raise FindFolder(f'Каталог {search} найден')
         for file in files:
-            if links.split('\\')[-1] == search:
-                raise FindFolder('каталог найден')
-            else:
-                yield links + '\\' + file
+            yield links + '\\' + file
 
 
 if __name__ == '__main__':
     # path_search = input("Введите путь для поиска: ")
     path_search = 'C:\\Users\\john\\PycharmProjects'
     # folder_search = input("Какой каталог будем искать? ")
-    folder_search = 'Module155'
+    folder_search = 'Module15'
 
     my_iter = gen_files_path(path_search, folder_search)
 
@@ -28,4 +28,4 @@ if __name__ == '__main__':
     except FindFolder as exc:
         print(exc)
     except StopIteration:
-        print('каталог не найден')
+        print(f'Каталог {folder_search} не найден')
